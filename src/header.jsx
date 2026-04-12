@@ -35,7 +35,7 @@ const Header = () => {
           {/* <div className="absolute inset-0 flex items-center justify-center">
   <img src="/img/Koi.png" className="object-cover md:w-230 md:h-115 md:mb-10 brightness-saturate-60 -contrast-50" />
 </div> */}
-        <div className="text-[#e9e9e9] font-bold p-8 md:text-8xl text-center md:mt-40 font-inter mt-10 text-[45px] hero-content">
+        <div className="text-[#e9e9e9] font-bold p-8 md:text-8xl text-center md:mt-40 font-inter mt-10 text-[40px] hero-content">
             <h1 className="uppercase text-center">Welcome</h1>
             <h1 className="uppercase">Hello I'm Kurt</h1>
             <h1 className="uppercase">Hello I'm Kurt</h1>
