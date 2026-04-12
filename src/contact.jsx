@@ -11,13 +11,13 @@ const Contactsection = () => {
 </h1>
         </div>
         <div className="p-8 flex flex-row space-x-6">
-            <a href="github.com/kutoreduso" className="text-[#e9e9e9] uppercase font-thin font-inter">
+            <a href="https://github.com/kutoreduso" className="text-[#e9e9e9] uppercase font-thin font-inter">
                 github
             </a>
-            <a href="instagram.com/kurt_cantiga/" className="text-[#e9e9e9] uppercase font-thin font-inter">
+            <a href="https://www.instagram.com/kurt_cantiga/" className="text-[#e9e9e9] uppercase font-thin font-inter">
                 instagram
             </a>
-            <a href="linkedin.com/in/kurt-cantiga-09b101381/" className="text-[#e9e9e9] uppercase font-thin font-inter">
+            <a href="https://www.linkedin.com/in/kurt-cantiga-09b101381/" className="text-[#e9e9e9] uppercase font-thin font-inter">
                 linkedin
             </a>
         </div>
