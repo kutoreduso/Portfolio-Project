@@ -7,6 +7,8 @@ return(
     <br className="md:mt-20"></br>
         <div className="">
             <h1 className="p-8 uppercase text-[#e5e5e5] font-inter">- Selected Work</h1>
+
+            <h1 className="p-8 uppercase text-[#e5e5e5] md:w-150 text-justify md:text-4xl text-2xl  font-inter">Explore the art and creations of designing and development.</h1>
 <br className="md:mt-20"></br>
       {/* Cards */}
        <div className="flex flex-col w-full">
