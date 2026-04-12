@@ -44,8 +44,8 @@ const Header = () => {
 </div>
 <br className="md:mt-20"></br>
         <div className="p-8 flex justify-between">
-            <h3 className="md:mt-40 uppercase font-light font-inter text-[#e9e9e9] mt-32 text-title">{new Date().getFullYear()} Based in Philippines</h3>
-            <div className="mt-20 md:mt-29 text-title">
+            <h3 className="md:mt-40 uppercase font-light font-inter text-[#e9e9e9] mt-22 text-title">{new Date().getFullYear()} Based in Philippines</h3>
+            <div className="mt-12 md:mt-29 text-title">
                 <h3 className="uppercase font-light font-inter text-[#e9e9e9]">UI / UX Design</h3>
                 <h3 className="uppercase font-light font-inter text-[#e9e9e9]">Front-End Developer </h3>
                 <h3 className="uppercase font-light font-inter text-[#e9e9e9]">Graphics Designer</h3>
