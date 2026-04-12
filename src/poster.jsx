@@ -25,8 +25,9 @@ const PosterSection = () => {
  <Navbar/>x
 
 
-        <div className="text-center text-split" >
-         <h1 className="text-[#e5e5e5]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, sed. awdawdawdw</h1> 
+        <div className="text-center text-split md:text-9xl text-6xl" >
+          <h1 className="text-[#e5e5e5]">NOTHING TO SEE HERE</h1> 
+         <h1 className="text-[#e5e5e5]">NOTHING TO SEE HERE</h1> 
         </div>
         </div>
     </>
