@@ -16,7 +16,7 @@ return(
     {/* LEFT SIDE: Image */}
     <div className="md:w-1/2 w-full aspect-square overflow-hidden">
       <img 
-        src="/public/projects/ccsnexus.png"
+        src="/projects/ccsnexus.png"
         alt="CCS Nexus"
         className="w-full h-full object-cover group-hover:scale-105 duration-700"
       />
