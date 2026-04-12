@@ -1,7 +1,60 @@
 
+import { useEffect, useRef } from "react";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const About = () => {
 
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    // --- Profile Content Logic (NO CHANGES) ---
+    const profilesplit = SplitText.create(".profile-content", {
+      type: "lines",
+      linesClass: "line",
+      tag: "span",
+    });
+
+    profilesplit.lines.forEach((line) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "overflow-hidden";
+      line.parentNode.insertBefore(wrapper, line);
+      wrapper.appendChild(line);
+    });
+
+    gsap.from(profilesplit.lines, {
+      scrollTrigger: {
+        trigger: ".profile-content",
+        start: "top 85%",
+      },
+      y: 60,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 0.6,
+      ease: "power3.out",
+    });
+
+    // --- IMAGE REVEAL FIX ---
+    // Ensure "trigger" is exactly the class on your <img> tag
+    gsap.from(".hero-image", {
+      scrollTrigger: {
+        trigger: ".hero-image", 
+        start: "top 90%", // Starts when the image is 90% down the screen
+        toggleActions: "play none none reverse",
+      },
+      y: 80,               
+      opacity: 0,          
+      scale: 0.9,         
+      duration: 1.5,       
+      ease: "power4.out",  
+    });
+
+  });
+
+  return () => ctx.revert();
+}, []);
     return(
             <>
             <div id="about">
@@ -25,18 +78,19 @@ const About = () => {
           /* Desktop: Exactly 1000px wide */
           md:w-[800px] md:h-auto 
           shadow-2xl
+          img-anim
         "
         alt="Kurt Profile"
       />
     </div>
 
     {/* TEXT CONTENT */}
-    <div className="text-[#e9e9e9] font-inter md:pr-10">
-      <h1 className="md:text-8xl font-bold uppercase text-4xl leading-tight">
+    <div className="text-[#e9e9e9] font-inter md:pr-10 ">
+      <h1 className="md:text-8xl font-bold uppercase text-4xl leading-tight profile-content">
         Hello I'm <br /> Kurt
       </h1>
       
-      <p className="w-full md:max-w-lg text-justify mt-8 md:text-[20px] leading-relaxed opacity-90">
+      <p className="w-full md:max-w-lg text-justify mt-8 md:text-[20px] leading-relaxed opacity-90 profile-content">
         I am a designer bridging the gap between Graphic Design aesthetics and functional UI/UX. 
         With a foundation in visual storytelling, I transform complex problems into intuitive, 
         scalable digital systems. My focus is on creating cohesive user journeys that are both 
