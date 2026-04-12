@@ -28,17 +28,20 @@ const HomeSection = () => {
 
       {/* 2. The Main Content Layer */}
       {/* We use 'relative' and 'z-index' to ensure the content stays below the loader */}
-      <div className={`relative bg-[#0A0A0A] scroll-smooth ${isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
+      <div className="min-h-screen bg-[#0A0A0A] selection:bg-white selection:text-black">
+      {isLoading && (
+        <Preloader onComplete={() => setIsLoading(false)} />
+      )}
+
+      {/* Main Content */}
+      <div className={`relative ${isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-700'}`}>
         <Header />
         <Service />
-        <section id="about">
-          <About />
-        </section>
+        <section id="about"><About /></section>
         <ProjectSection />
-        <section id="contact">
-          <Contactsection />
-        </section>
+        <section id="contact"><Contactsection /></section>
       </div>
+    </div>
     </>
   );
 };

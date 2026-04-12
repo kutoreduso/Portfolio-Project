@@ -6,3 +6,10 @@
   --font-inter: "inter",sans-serif;
 
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0A0A0A; /* Matches your site background */
+  overflow-x: hidden;
+  height: 100%;
+}

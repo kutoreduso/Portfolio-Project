@@ -64,11 +64,16 @@ const Preloader = ({ onComplete }) => {
       })
 
       // 4. The Unveil
-      .to(shutterRef.current, {
-        yPercent: -100,
-        duration: 1,
-        ease: "expo.inOut",
-      });
+      // 4. The Unveil
+tl.to(shutterRef.current, {
+  yPercent: -100,
+  duration: 1.2, // Slightly slower for a smoother feel
+  ease: "expo.inOut",
+  onComplete: () => {
+    // This ensures onComplete ONLY fires once the shutter is gone
+    onComplete();
+  }
+});
 
   }, { scope: container });
 
