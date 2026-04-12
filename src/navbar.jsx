@@ -16,22 +16,24 @@ const Navbar = () => {
                <nav className="font-inter">
   <ul className="md:flex-row flex-col flex gap-5 font-inter text-[#E5E5E5] font-bold">
     {/* Galleria Link - Works fine */}
-    <Link to="/poster">
-      <li className="md:w-25 rounded-2xl  text-center  text-[#e9e9e9]  uppercase ">
+    <Link to="/poster" className="group">
+      <li className="md:w-25 rounded-2xl  text-center  text-[#e9e9e9]  uppercase hover:opacity-50 duration-300">
         Galleria
       </li>
     </Link>
 
     {/* ABOUT Link - Fixed to use hash if About is a section on the Home page */}
-    <Link to="/#about">
-  <li className="md:w-25 rounded-2xl  text-center  text-[#e9e9e9] uppercase ">
+    <Link to="/#about" className="group"> 
+  <li className="md:w-25 rounded-2xl  text-center  text-[#e9e9e9] uppercase hover:opacity-50 duration-300">
     ABOUT
+    
   </li>
 </Link>
 
-<Link to="/#contact">
-  <li className="w-30 rounded-2xl  text-center  text-[#e9e9e9]  uppercase">
+<Link to="/#contact" className="group">
+  <li className="w-30 rounded-2xl  text-center  text-[#e9e9e9] uppercase hover:opacity-50 duration-300">
     CONTACT
+    
   </li>
 </Link>
   </ul>
