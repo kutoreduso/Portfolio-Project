@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Navbar from "./navbar";
 import PosterSection from "./poster";
 import HomeSection from "./home";
-
+import Preloader from "./loadup";
 // Modern logic to handle scrolling to #about and #contact
 function ScrollToSection() {
   const { pathname, hash } = useLocation();
