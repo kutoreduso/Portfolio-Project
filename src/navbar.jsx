@@ -7,7 +7,7 @@ const Navbar = () => {
 
 <>
         
-        <div className="p-5 flex flex-row justify-between bg-transparent font-inter">
+        <div className="p-5 flex flex-row justify-between bg-transparent font-inter container mx-auto">
             <Link to="/">
             <h1 className="font-bold  text-[#E5E5E5] md:w-20  text-center">
                 Kurt.
