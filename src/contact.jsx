@@ -4,7 +4,7 @@ const Contactsection = () => {
 
     return(
         <>
-        <h1 className="font-inter uppercase text-[#e9e9e9] pl-8 mt-100" >- Contact</h1>
+        <h1 className="font-inter uppercase text-[#e9e9e9] pl-8 mt-25" >- Contact</h1>
         <div className="mt-90 pl-8 md:mt-70"id="contact">
             <h1 className="text-7xl font-inter md:text-[300px] uppercase font-bold text-[#e9e9e9] leading-[0.8] tracking-tighter">
   Let<br />Connect!

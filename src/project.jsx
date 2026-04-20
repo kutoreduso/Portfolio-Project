@@ -1,128 +1,81 @@
 
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 
+const projects = [
+  { title: "CCS Nexus", img: "/projects/ccsnexus.png", tech: "PHP • MySQL" },
+  { title: "TaskFlow", img: "/projects/taskflow.png", tech: "PHP • MySQL" },
+  { title: "KOI FISH (Color Grading)", img: "/img/Koi.png", tech: "Photoshop" },
+  { title: "Portfolio v4", img: "/port.jpg", tech: "Tailwind v4" },
+];
 const ProjectSection = () => {
+const [activeImage, setActiveImage] = useState(projects[0].img);
+  const container = useRef(null);
+  const follower = useRef(null);
 
+  useEffect(() => {
+    // 1. Smooth Mouse Follower logic
+    const xTo = gsap.quickTo(follower.current, "x", { duration: 0.5, ease: "power3" });
+    const yTo = gsap.quickTo(follower.current, "y", { duration: 0.5, ease: "power3" });
+
+    const handleMouseMove = (e) => {
+      xTo(e.clientX);
+      yTo(e.clientY);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const handleMouseEnter = (img) => {
+    setActiveImage(img);
+    gsap.to(follower.current, { scale: 1, opacity: 1, duration: 0.3 });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(follower.current, { scale: 0, opacity: 0, duration: 0.3 });
+  };
 return(
     <>
-    <br className="md:mt-20"></br>
-        <div className="">
-            <h1 className="p-8 uppercase text-[#e5e5e5] font-inter">- Selected Work</h1>
 
-            <h1 className="p-8 uppercase text-[#e5e5e5] md:w-150 text-justify md:text-4xl text-2xl  font-inter">Explore the art and creations of designing and development.</h1>
-<br className="md:mt-20"></br>
-      {/* Cards */}
-       <div className="flex flex-col w-full">
-  {/* Added flex-1 to children to ensure 50/50 split */}
-  <div className="w-full group flex flex-col md:flex-row bg-[#1a1a1a] overflow-hidden min-h-[500px] border border-gray-900">
-    
-    {/* LEFT SIDE: Image */}
-    <div className="md:w-1/2 w-full aspect-square overflow-hidden">
-      <img 
-        src="/projects/ccsnexus.png"
-        alt="CCS Nexus"
-        className="w-full h-full object-cover group-hover:scale-105 duration-700"
-      />
+    <div className="p-8">
+      <h1 className="font-inter uppercase">- Project</h1>
     </div>
-
-    {/* RIGHT SIDE: Content */}
-    <div className="md:w-1/2 w-full flex flex-col justify-center p-8 md:p-16">
-      {/* Date & Title */}
-      <span className="text-[#e9e9e9] font-inter text-xs tracking-widest uppercase mb-2">Capas, Tarlac 2024 - 2025</span>
-      <h1 className="text-[#e9e9e9] font-inter font-bold text-4xl md:text-6xl leading-tight">
-        CCS Nexus
+    <div className='p-8'>
+      <h1 className="font-inter md:text-6xl text-justify text-[25px]">
+         A showcase of ideas turned into reality—exploring design, code, and innovation through hands-on projects.
       </h1>
-      
-      <p className="text-gray-400 font-inter mt-4 text-sm md:text-base leading-relaxed">
-        Centralized platform designed to modernize academic assessments by replacing traditional paper-based workflows. It streamlines the grading process through a secure, web-based interface, ensuring data accuracy and faster evaluation for capstone projects.
-      </p>
-
-      {/* Features List */}
-      <ul className="text-[#e9e9e9] font-inter mt-8 space-y-4 text-sm md:text-lg">
-        <li className="flex items-start gap-3">
-          <span className="text-gray-600">•</span>
-          <span>Introduced a centralized Web-based Grading platform.</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <span className="text-gray-600">•</span>
-          <span>Improved evaluation efficiency for 3rd & 4th year proponents.</span>
-        </li>
-      </ul>
-
-      {/* Tech Stack - My addition to show your Developer side */}
-      <div className="flex gap-3 mt-10">
-        <span className="text-[10px] px-3 py-1 border border-gray-800 rounded-full text-gray-500 font-bold tracking-tighter">BOOTSTRAP</span>
-        <span className="text-[10px] px-3 py-1 border border-gray-800 rounded-full text-gray-500 font-bold tracking-tighter">PHP / SQL</span>
-      </div>
-
-      {/* Animated Action Link */}
-      <div className="mt-12">
-        <a href="https://ccsnexus.site/login" className="relative text-[#e9e9e9] group/link w-fit text-sm font-bold tracking-widest uppercase">
-          View Project
-          <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-[#e9e9e9] transition-all duration-300 group-hover/link:w-full"></span>
-        </a>
-      </div>
     </div>
-  </div>
-</div>
-
-<br></br>
-{/* Next Project */}
-<div className="flex flex-col w-full">
-  {/* Added flex-1 to children to ensure 50/50 split */}
-  <div className="w-full group flex flex-col md:flex-row bg-[#1a1a1a] overflow-hidden min-h-[500px] border border-gray-900">
-    
-    {/* LEFT SIDE: Image */}
-    <div className="md:w-1/2 w-full aspect-square overflow-hidden">
-      <img 
-        src="/projects/taskflow.png"
-        alt="Taskflow"
-        className="w-full h-full object-cover group-hover:scale-105 duration-700"
-      />
-    </div>
-
-    {/* RIGHT SIDE: Content */}
-    <div className="md:w-1/2 w-full flex flex-col justify-center p-8 md:p-16">
-      {/* Date & Title */}
-      <span className="text-[#e9e9e9] font-inter text-xs tracking-widest uppercase mb-2">Concepcion, Tarlac - 2026</span>
-      <h1 className="text-[#e9e9e9] font-inter font-bold text-4xl md:text-6xl leading-tight">
-        Taskflow
-      </h1>
-      
-      <p className="text-gray-400 font-inter mt-4 text-sm md:text-base leading-relaxed md:w-150 text-justify">
-       Centralized management system designed to streamline the distribution of responsibilities and track project progress in real-time. It eliminates workflow bottlenecks by bridging the gap between team delegation and operational transparency within a local network environment.
-      </p>
-
-      {/* Features List */}
-      <ul className="text-[#e9e9e9] font-inter mt-8 space-y-4 text-sm md:text-lg">
-        <li className="flex items-start gap-3">
-          <span className="text-gray-600">•</span>
-          <span>Initilized a efficiency Task Management System through Online</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <span className="text-gray-600">•</span>
-          <span>Improved the destribution of task with mix of Traditional and Digital</span>
-        </li>
-      </ul>
-
-      {/* Tech Stack - My addition to show your Developer side */}
-      <div className="flex gap-3 mt-10">
-  <span className="text-[10px] px-3 py-1 border border-gray-800 rounded-full text-gray-500 font-bold tracking-tighter">BOOTSTRAP</span>
-        <span className="text-[10px] px-3 py-1 border border-gray-800 rounded-full text-gray-500 font-bold tracking-tighter">PHP / SQL</span>
+    <section ref={container} className="relative py-20 bg-[#0a0a0a] text-white overflow-hidden">
+      {/* The Floating Image */}
+      <div 
+        ref={follower} 
+        className="pointer-events-none fixed top-0 left-0 w-80 aspect-video z-50 opacity-0 scale-0 overflow-hidden rounded-xl border border-zinc-700 shadow-2xl"
+        style={{ transform: 'translate(-50%, -50%)' }}
+      >
+        <img src={activeImage} className="w-full h-full object-cover" alt="Preview" />
       </div>
 
-      {/* Animated Action Link */}
-      <div className="mt-12">
-        <a href="https://taskflow.infinityfree.me/" className="relative text-[#e9e9e9] group/link w-fit text-sm font-bold tracking-widest uppercase">
-          View Project
-          <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-[#e9e9e9] transition-all duration-300 group-hover/link:w-full"></span>
-        </a>
+      {/* The Project List */}
+      <div className="flex flex-col border-t border-zinc-800">
+        {projects.map((project, i) => (
+          <div 
+            key={i}
+            onMouseEnter={() => handleMouseEnter(project.img)}
+            onMouseLeave={handleMouseLeave}
+            className="group flex items-center justify-between p-10 border-b border-zinc-800 hover:bg-zinc-900/50 transition-colors cursor-pointer"
+          >
+            <h2 className="md:text-6xl text-3xl font-bold uppercase tracking-tighter transition-all">
+              {project.title}
+            </h2>
+            <p className="text-zinc-500 font-mono text-sm">{project.tech}</p>
+          </div>
+        ))}
       </div>
-    </div>
-  </div>
-</div>
-        
-  </div>
-  
+    </section>
+
+
+
 </>
 )
 }
