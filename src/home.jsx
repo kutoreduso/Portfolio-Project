@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from './header';
 import Service from './service';
 import About from './about';
-import ProjectSection from './project';
+import PosterSection from './poster';
 import Contactsection from './contact';
 import Preloader from './loadup';
 
@@ -41,7 +41,6 @@ const HomeSection = () => {
         <Header />
         <Service />
         <section id="about"><About /></section>
-        <ProjectSection />
         <section id="contact"><Contactsection /></section>
       </main>
     </div>

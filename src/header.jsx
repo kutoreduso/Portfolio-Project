@@ -59,7 +59,7 @@ const Header = () => {
                 </div>
 
                 <div className="p-8 flex justify-between items-end pb-20">
-                    <h3 className="uppercase font-light font-inter text-[#e9e9e9] text-title">
+                    <h3 className="uppercase font-light font-inter text-[#e9e9e9] text-title ">
                         {new Date().getFullYear()} Based in Philippines
                     </h3>
                     <div className="text-title text-right">
