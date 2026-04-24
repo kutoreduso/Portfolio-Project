@@ -5,6 +5,7 @@ import About from './about';
 import PosterSection from './poster';
 import Contactsection from './contact';
 import Preloader from './loadup';
+import ProjectSection from './project';
 
 const HomeSection = () => {
   // Use lowercase 'setIsLoading' to follow React conventions
@@ -41,6 +42,7 @@ const HomeSection = () => {
         <Header />
         <Service />
         <section id="about"><About /></section>
+        <ProjectSection />
         <section id="contact"><Contactsection /></section>
       </main>
     </div>
