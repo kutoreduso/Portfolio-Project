@@ -6,7 +6,7 @@ const projects = [
   { title: "CCS Nexus", img: "/projects/ccsnexus.png", tech: "PHP • MySQL" },
   { title: "TaskFlow", img: "/projects/taskflow.png", tech: "PHP • MySQL" },
   { title: "KOI FISH (Color Grading)", img: "/img/Koi.png", tech: "Photoshop" },
-  { title: "Scentology (Work In Progress)", img: "/projects/scentology.png", tech: "React • Tailwind v4 • GSAP" },
+  { title: "SCENT ATELIER (Work In Progress)", img: "/projects/scentology.png", tech: "React • Tailwind v4 • GSAP" },
 ];
 const ProjectSection = () => {
 const [activeImage, setActiveImage] = useState(projects[0].img);
