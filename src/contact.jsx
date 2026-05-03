@@ -20,6 +20,9 @@ const Contactsection = () => {
             <a href="https://www.linkedin.com/in/kurt-cantiga-09b101381/" className="text-[#e9e9e9] uppercase font-thin font-inter">
                 linkedin
             </a>
+            <a href="/cv/CV.pdf" className="text-[#e9e9e9] uppercase font-thin font-inter">
+                Download CV
+            </a>
         </div>
         </>
 
